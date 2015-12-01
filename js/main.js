@@ -10,11 +10,21 @@ requirejs.config({
 	
     //paths ：path映射那些不直接放置于baseUrl下的模块名。设置path时起始位置是相对于baseUrl的，
     paths: {
-        jquery: './lib/jquery-1.11.0.min'
-        /*DD:'./lib/DD_belatedPNG_0.0.8a'*/
+        jquery: './lib/jquery-1.11.0.min',
+        DD_belatedPNG:'./lib/DD_belatedPNG_0.0.8a',
+        tween:'.lib/tween'
     }
     
     //shim: 为那些没有使用define()来声明依赖关系、设置模块的"浏览器全局变量注入"型脚本做依赖和导出配置
+    //还有一个shim属性，专门用来配置不兼容的模块。具体来说，每个模块要定义
+    //（1）exports值（输出的变量名），表明这个模块外部调用时的名称；（2）deps数组，表明该模块的依赖性。
+    //jQuery的插件可以这样定义：
+    /*shim: {
+　　　　'jquery.scroll': {
+　　　　　　deps: ['jquery'], // 依赖项
+　　　　　　exports: 'jQuery.fn.scroll'//（输出的变量名）,表明这个模块外部调用时的名称;
+　　　　}
+　　}*/
     
 });
 
@@ -26,5 +36,5 @@ requirejs.config({
 //require()异步加载moduleA，moduleB和moduleC，浏览器不会失去响应；
 //它指定的回调函数，只有前面的模块都加载成功后，才会运行，解决了依赖性的问题。
 requirejs(['jquery'],function($){
-
+	$('body').css('background-color','red')
 });
