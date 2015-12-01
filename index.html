@@ -3,8 +3,49 @@
 	<head>
 		<meta charset="utf-8">
 		<title>100du-e-commerce</title>
+		<link rel="stylesheet" type="text/css" href=""/>
+		
+		<!--
+			defer和async，这两个属性主要是为了让浏览器能在页面元素全部加载完以后再加载JS，我称这个为异步加载JS，
+			这种方法可以避免因为加载JS时页面卡住，出现假死的状态，所以我们让先让页面呈现出来，然后在加载JS，
+			相当于平常我们把JS放到页面底部原理差不多。
+			上面defer属性是因为IE不支持async，所以加上的。
+		-->
+		<script src="js/require.js" defer async="true" ></script>
+		
+		<!--
+			Tdata-main属性的作用是，指定网页程序的主模块。main文件第一个被require加载
+			由于require.js默认的文件后缀名是js，所以可以把main.js简写成main。
+		-->
+		<script src="js/require.js" data-main="js/main"></script>	
+		
+		<!--<script src="js/main"></script>-->
+		
+		<script src="js/lib/DD_belatedPNG_0.0.8a.js" ></script>
+		<!--
+			[if IE 6]> 
+			Adds IE6 support: PNG images for CSS background-image and HTML 
+		<script src="js/DD_belatedPNG_0.0.8a.js"></script>
+		<script>
+		DD_belatedPNG.fix('*');
+		</script>
+		<![endif]
+		-->
 	</head>
 	<body>
-		
+		<div id="header" class="gradient">
+			<p class="city">
+				切换城市：
+				<a href="http://www.miaov.com/2013">北京</a>
+				<a href="http://www.miaov.com/2013" class="active">上海</a>
+				<a href="http://www.miaov.com/2013">福州</a>
+				<a href="http://www.miaov.com/2013">广州</a>
+				<a href="http://www.miaov.com/2013">青岛</a>
+			</p>
+			<p class="link">
+				<a href="http://www.miaov.com/2013" class="ico1">加盟100度</a> |
+				<a href="http://www.miaov.com/2013" class="ico2">店铺管理</a>
+			</p>
+		</div>
 	</body>
 </html>
