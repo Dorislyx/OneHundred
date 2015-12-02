@@ -4,13 +4,14 @@
 		<meta charset="utf-8">
 		<title>100du-e-commerce</title>
 		<link rel="stylesheet" type="text/css" href=""/>
-		
+		<link href="images/100du.ico" rel="shortcut icon" />
 		<!--
 			defer和async，这两个属性主要是为了让浏览器能在页面元素全部加载完以后再加载JS，我称这个为异步加载JS，
 			这种方法可以避免因为加载JS时页面卡住，出现假死的状态，所以我们让先让页面呈现出来，然后在加载JS，
 			相当于平常我们把JS放到页面底部原理差不多。
 			上面defer属性是因为IE不支持async，所以加上的。
 		-->
+		<script src="js/lib/DD_belatedPNG_0.0.8a.js" ></script>
 		<script src="js/require.js" defer async="true" ></script>
 		
 		<!--
@@ -21,7 +22,7 @@
 		
 		<!--<script src="js/main"></script>-->
 		
-		<script src="js/lib/DD_belatedPNG_0.0.8a.js" ></script>
+		
 		<!--
 			[if IE 6]> 
 			Adds IE6 support: PNG images for CSS background-image and HTML 
